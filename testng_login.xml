@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Login Suite">
+    <test name="Login Tests">
+        <classes>
+            <class name="com.vinaythetestingacademy.test.pageObjectModel_TestVWO.TestVWOLogin_02_PropertyReader_DriverManager_POM_CommonToAll"/>
+        </classes>
+    </test>
+</suite>
