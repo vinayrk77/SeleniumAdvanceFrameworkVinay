@@ -1,4 +1,4 @@
-# Selenium Advanced Automation Framework
+Selenium Advanced Automation Framework
 
 A production-grade UI test automation framework built with Java and Selenium WebDriver, designed for scalability, parallel execution, and clean reporting.
 
