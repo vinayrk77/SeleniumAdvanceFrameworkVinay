@@ -24,7 +24,7 @@ A production-grade UI test automation framework built with Java and Selenium Web
 
 ## Framework Architecture
 
-```
+
 src/
 ├── main/java/
 │   ├── pages/          # Page Object classes (one per page)
@@ -32,7 +32,7 @@ src/
 │   └── base/           # BaseTest — setup & teardown
 └── test/java/
     └── tests/          # TestNG test classes
-```
+
 
 ---
 
@@ -60,47 +60,46 @@ src/
 
 ### Clone & Install
 
-```bash
+bash
 git clone https://github.com/vinayrk77/SeleniumAdvanceFrameworkVinay.git
 cd SeleniumAdvanceFrameworkVinay
 mvn clean install -DskipTests
-```
+
 
 ### Run Tests Locally
 
-```bash
+bash
 # Login test suite
 mvn clean test -DsuiteXmlFile=testng_login.xml
 
 # VWO suite with retry logic
 mvn clean test -DsuiteXmlFile=testng_vwo_retry.xml
-```
+
 
 ### Run on Selenoid (Docker Grid)
 
-```bash
+bash
 # Start Selenoid first
 docker-compose up -d
 
 # Run against grid
 mvn clean test -Denv=selenoid -DsuiteXmlFile=testng_login.xml
-```
+
 
 ### Generate Allure Report
 
-```bash
+bash
 allure serve allure-results/
-```
+
 
 ---
 
 ## Parallel Execution
 
-Parallel test execution is configured via TestNG XML. Update the `parallel` attribute to run across threads:
+Parallel test execution is configured via TestNG XML. Update the parallel attribute to run across threads:
 
-```xml
+xml
 <suite name="Suite" parallel="methods" thread-count="4">
-```
 
 ThreadLocal ensures each thread gets its own isolated WebDriver instance — no race conditions.
 
@@ -110,15 +109,14 @@ ThreadLocal ensures each thread gets its own isolated WebDriver instance — no 
 
 Test credentials and inputs are managed in two ways:
 
-- **Properties file** — environment config (base URL, timeouts)
-- **Excel via Apache POI** — data-driven test cases using `@DataProvider`
+- Properties file — environment config (base URL, timeouts)
+- Excel via Apache POI — data-driven test cases using @DataProvider
 
-```java
+java
 @DataProvider(name = "loginData")
 public Object[][] getLoginData() {
     return ExcelUtils.readData("testdata/LoginData.xlsx", "Sheet1");
 }
-```
 
 ---
 
@@ -126,9 +124,8 @@ public Object[][] getLoginData() {
 
 Allure Reports are generated after each test run:
 
-```bash
+bash
 allure serve allure-results/
-```
 
 Reports include test step breakdown, pass/fail trends, environment info, and screenshots attached on failure.
 
