@@ -38,14 +38,14 @@ src/
 
 ## Key Features
 
-- **ThreadLocal WebDriver** — fully thread-safe parallel execution, no cross-thread interference
-- **Page Object Model** — clean separation between test logic and UI interactions
-- **Data-driven testing** — test inputs loaded from Excel sheets via Apache POI
-- **Config-driven** — base URL, credentials, and environment settings in `config.properties`
-- **Selenoid integration** — runs tests on a Dockerized browser grid for CI/CD environments
-- **Allure Reports** — rich HTML reports with test steps, pass/fail history, and screenshots on failure
-- **Retry logic** — flaky test retry mechanism via TestNG `IRetryAnalyzer`
-- **SonarLint** — enforced code quality checks throughout
+- ThreadLocal WebDriver — fully thread-safe parallel execution, no cross-thread interference
+- Page Object Model — clean separation between test logic and UI interactions
+- Data-driven testing — test inputs loaded from Excel sheets via Apache POI
+- Config-driven — base URL, credentials, and environment settings in config.properties
+- Selenoid integration — runs tests on a Dockerized browser grid for CI/CD environments
+- Allure Reports — rich HTML reports with test steps, pass/fail history, and screenshots on failure
+- Retry logic — flaky test retry mechanism via TestNG IRetryAnalyzer
+- SonarLint — enforced code quality checks throughout
 
 ---
 
